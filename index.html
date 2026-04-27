@@ -14,6 +14,197 @@ header{background:#0d47a1;color:#fff;padding:18px;font-size:22px;font-weight:700
 .tab.active{background:#0d47a1;color:#fff}
 .panel{display:none}
 .panel.active{display:block}
+<div id="sheet" class="panel">
+
+<div class="card">
+
+<h2>簡易管理案（フォーム → スプレッドシート自動蓄積）</h2>
+
+<div class="notice">
+
+低コスト・短納期で導入しやすい反面、対応状況管理や取引先向け表示は限定的です。
+
+</div>
+
+<table class="table" style="margin-top:16px;">
+
+<tr>
+
+<th>受付日時</th>
+
+<th>会社名</th>
+
+<th>担当者</th>
+
+<th>内容</th>
+
+<th>対応者</th>
+
+<th>状況</th>
+
+</tr>
+
+<tr>
+
+<td>4/28 10:20</td>
+
+<td>株式会社ABC</td>
+
+<td>山田</td>
+
+<td>商品A 20個</td>
+
+<td></td>
+
+<td>未対応</td>
+
+</tr>
+
+<tr>
+
+<td>4/28 09:55</td>
+
+<td>山田商事</td>
+
+<td>田中</td>
+
+<td>納期確認</td>
+
+<td>事務</td>
+
+<td>電話済</td>
+
+</tr>
+
+<tr>
+
+<td>4/27 16:40</td>
+
+<td>田中産業</td>
+
+<td>佐藤</td>
+
+<td>修理依頼（写真別管理）</td>
+
+<td></td>
+
+<td>確認中</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>この方式のメリット</h2>
+
+<ul style="padding-left:20px;line-height:2;">
+
+<li>初期費用が安い</li>
+
+<li>導入が早い</li>
+
+<li>一覧・検索・共有しやすい</li>
+
+<li>Excel感覚で使える</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>この方式の弱点</h2>
+
+<ul style="padding-left:20px;line-height:2;">
+
+<li>誰が対応中か分かりづらい</li>
+
+<li>取引先側に受付状況を見せられない</li>
+
+<li>履歴ページ・再注文機能なし</li>
+
+<li>写真管理が煩雑になりやすい</li>
+
+<li>件数増加で見づらくなりやすい</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>今回ご提案システムとの違い</h2>
+
+<table class="table">
+
+<tr>
+
+<th>項目</th>
+
+<th>表計算案</th>
+
+<th>専用システム案</th>
+
+</tr>
+
+<tr>
+
+<td>受付一覧</td>
+
+<td>○</td>
+
+<td>◎</td>
+
+</tr>
+
+<tr>
+
+<td>対応中表示</td>
+
+<td>△ 手入力</td>
+
+<td>◎ 自動管理</td>
+
+</tr>
+
+<tr>
+
+<td>取引先ログイン</td>
+
+<td>×</td>
+
+<td>◎</td>
+
+</tr>
+
+<tr>
+
+<td>履歴確認</td>
+
+<td>△ 管理側のみ</td>
+
+<td>◎ 双方確認可</td>
+
+</tr>
+
+<tr>
+
+<td>写真添付管理</td>
+
+<td>△ 別管理になりやすい</td>
+
+<td>◎ 一元管理</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
 .card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);margin-bottom:18px}
 h2{font-size:20px;margin-bottom:16px;color:#0d47a1}
 label{display:block;font-size:14px;font-weight:700;margin-bottom:6px;margin-top:14px}
@@ -54,6 +245,7 @@ header{font-size:18px}
 <div class="tabs">
 <div class="tab active" onclick="showTab('client',this)">取引先ページ</div>
 <div class="tab" onclick="showTab('admin',this)">管理画面</div>
+<div class="tab" onclick="showTab('sheet',this)">簡易管理（表計算案）</div>
 </div>
 
 <!-- 取引先 -->
