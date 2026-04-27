@@ -7,119 +7,39 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif}
 body{background:#f4f7fa;color:#222}
-header{
-background:#0d47a1;
-color:#fff;
-padding:18px;
-font-size:22px;
-font-weight:700;
-text-align:center;
-}
-.wrap{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
-.tabs{
-display:flex;
-gap:10px;
-margin-bottom:20px;
-flex-wrap:wrap;
-}
-.tab{
-background:#fff;
-border:1px solid #d0d7e2;
-padding:12px 18px;
-border-radius:8px;
-cursor:pointer;
-font-weight:700;
-}
-.tab.active{
-background:#0d47a1;
-color:#fff;
-}
-.panel{
-display:none;
-}
-.panel.active{
-display:block;
-}
-.card{
-background:#fff;
-border-radius:10px;
-padding:20px;
-box-shadow:0 4px 14px rgba(0,0,0,.06);
-margin-bottom:18px;
-}
-h2{
-font-size:20px;
-margin-bottom:16px;
-color:#0d47a1;
-}
-label{
-display:block;
-font-size:14px;
-font-weight:700;
-margin-bottom:6px;
-margin-top:14px;
-}
+header{background:#0d47a1;color:#fff;padding:18px;font-size:22px;font-weight:700;text-align:center}
+.wrap{max-width:1200px;margin:auto;padding:20px}
+.tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.tab{background:#fff;border:1px solid #d0d7e2;padding:12px 18px;border-radius:8px;cursor:pointer;font-weight:700}
+.tab.active{background:#0d47a1;color:#fff}
+.panel{display:none}
+.panel.active{display:block}
+.card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);margin-bottom:18px}
+h2{font-size:20px;margin-bottom:16px;color:#0d47a1}
+label{display:block;font-size:14px;font-weight:700;margin-bottom:6px;margin-top:14px}
 input,select,textarea{
-width:100%;
-padding:11px;
-border:1px solid #cfd8dc;
-border-radius:8px;
-font-size:15px;
+width:100%;padding:11px;border:1px solid #cfd8dc;border-radius:8px;font-size:15px
 }
 textarea{min-height:110px;resize:vertical}
-.row{
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:10px;
-margin-top:10px;
-}
-.btn{
-background:#0d47a1;
-color:#fff;
-border:none;
-padding:12px 18px;
-border-radius:8px;
-cursor:pointer;
-font-weight:700;
-margin-top:16px;
-}
+.row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:10px}
+.btn{background:#0d47a1;color:#fff;border:none;padding:12px 18px;border-radius:8px;cursor:pointer;font-weight:700;margin-top:16px}
 .btn.gray{background:#607d8b}
 .btn.green{background:#2e7d32}
-.notice{
-background:#e3f2fd;
-padding:14px;
-border-radius:8px;
-margin-top:15px;
-font-size:14px;
-}
-.table{
-width:100%;
-border-collapse:collapse;
-}
-.table th,.table td{
-padding:12px;
-border-bottom:1px solid #e0e0e0;
-font-size:14px;
-text-align:left;
-}
-.badge{
-padding:6px 10px;
-border-radius:20px;
-font-size:12px;
-font-weight:700;
-display:inline-block;
-}
+.notice{background:#e3f2fd;padding:14px;border-radius:8px;margin-top:15px;font-size:14px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:12px;border-bottom:1px solid #e0e0e0;font-size:14px;text-align:left;vertical-align:top}
+.badge{padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700;display:inline-block}
 .new{background:#e3f2fd;color:#1565c0}
 .progress{background:#fff8e1;color:#ef6c00}
 .done{background:#e8f5e9;color:#2e7d32}
-.memo{
-margin-top:10px;
-}
-@media(max-width:768px){
+.wait{background:#f3e5f5;color:#7b1fa2}
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.statusbox{background:#f8fafc;border:1px solid #d9e3ef;border-radius:10px;padding:16px}
+.statusitem{padding:12px;border-bottom:1px solid #e5eaf0}
+.statusitem:last-child{border-bottom:none}
+.small{font-size:13px;color:#555;margin-top:4px}
+@media(max-width:900px){
+.grid2{grid-template-columns:1fr}
 .row{grid-template-columns:1fr}
 header{font-size:18px}
 }
@@ -138,7 +58,6 @@ header{font-size:18px}
 
 <!-- 取引先 -->
 <div id="client" class="panel active">
-
 <div class="card">
 <h2>お問い合わせ / 発注フォーム</h2>
 
@@ -172,7 +91,6 @@ header{font-size:18px}
 <div id="repairBox" style="display:none">
 <label>写真添付</label>
 <input type="file">
-
 <label>症状・状態</label>
 <textarea placeholder="例：ハンドル部分が破損しています"></textarea>
 </div>
@@ -185,17 +103,18 @@ header{font-size:18px}
 <div class="notice" id="doneMsg" style="display:none">
 受付が完了しました。内容確認後、必要に応じてお電話またはメールにてご連絡いたします。
 </div>
-
 </div>
-
 </div>
 
 <!-- 管理画面 -->
 <div id="admin" class="panel">
 
+<div class="grid2">
+
+<!-- 左 -->
+<div>
 <div class="card">
 <h2>問い合わせ一覧</h2>
-
 <table class="table">
 <tr>
 <th>日時</th>
@@ -207,8 +126,8 @@ header{font-size:18px}
 <tr>
 <td>4/28 10:20</td>
 <td>株式会社ABC</td>
-<td>商品発注</td>
-<td><span class="badge new">新着</span></td>
+<td>商品A 20個</td>
+<td><span class="badge new">未読</span></td>
 </tr>
 
 <tr>
@@ -224,7 +143,6 @@ header{font-size:18px}
 <td>修理依頼</td>
 <td><span class="badge done">完了</span></td>
 </tr>
-
 </table>
 </div>
 
@@ -237,23 +155,58 @@ header{font-size:18px}
 
 <label>ステータス変更</label>
 <select>
-<option>新着</option>
+<option>未読</option>
 <option>確認中</option>
 <option>対応中</option>
 <option>完了</option>
 </select>
 
-<div class="memo">
 <label>社内メモ</label>
 <textarea placeholder="4/28 午後に折返し予定"></textarea>
-</div>
 
 <button class="btn">保存</button>
+</div>
+</div>
 
+<!-- 右 -->
+<div>
+<div class="card">
+<h2>取引先マイページ表示イメージ</h2>
+
+<div class="statusbox">
+
+<div class="statusitem">
+<span class="badge new">未読</span>
+<div class="small">4/28 商品A 20個 発注依頼</div>
+</div>
+
+<div class="statusitem">
+<span class="badge wait">確認中</span>
+<div class="small">4/28 納期確認のお問い合わせ</div>
+</div>
+
+<div class="statusitem">
+<span class="badge progress">対応中</span>
+<div class="small">4/27 修理依頼（写真添付あり）</div>
+</div>
+
+<div class="statusitem">
+<span class="badge done">完了</span>
+<div class="small">4/25 商品B 発注受付済み</div>
 </div>
 
 </div>
 
+<div class="notice" style="margin-top:14px">
+取引先様はログイン後、自社の依頼履歴と対応状況のみ確認できます。
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
 </div>
 
 <script>
@@ -263,7 +216,6 @@ document.querySelectorAll('.tab').forEach(v=>v.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 el.classList.add('active');
 }
-
 function addItem(){
 let row=document.createElement('div');
 row.className='row';
@@ -274,15 +226,12 @@ row.innerHTML=`
 `;
 document.getElementById('items').appendChild(row);
 }
-
 function sendForm(){
 document.getElementById('doneMsg').style.display='block';
 window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
 }
-
 function typeChange(val){
-document.getElementById('repairBox').style.display =
-(val==="修理依頼") ? "block" : "none";
+document.getElementById('repairBox').style.display=(val==="修理依頼")?"block":"none";
 }
 </script>
 
