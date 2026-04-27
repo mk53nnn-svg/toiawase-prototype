@@ -14,203 +14,10 @@ header{background:#0d47a1;color:#fff;padding:18px;font-size:22px;font-weight:700
 .tab.active{background:#0d47a1;color:#fff}
 .panel{display:none}
 .panel.active{display:block}
-<div id="sheet" class="panel">
-
-<div class="card">
-
-<h2>簡易管理案（フォーム → スプレッドシート自動蓄積）</h2>
-
-<div class="notice">
-
-低コスト・短納期で導入しやすい反面、対応状況管理や取引先向け表示は限定的です。
-
-</div>
-
-<table class="table" style="margin-top:16px;">
-
-<tr>
-
-<th>受付日時</th>
-
-<th>会社名</th>
-
-<th>担当者</th>
-
-<th>内容</th>
-
-<th>対応者</th>
-
-<th>状況</th>
-
-</tr>
-
-<tr>
-
-<td>4/28 10:20</td>
-
-<td>株式会社ABC</td>
-
-<td>山田</td>
-
-<td>商品A 20個</td>
-
-<td></td>
-
-<td>未対応</td>
-
-</tr>
-
-<tr>
-
-<td>4/28 09:55</td>
-
-<td>山田商事</td>
-
-<td>田中</td>
-
-<td>納期確認</td>
-
-<td>事務</td>
-
-<td>電話済</td>
-
-</tr>
-
-<tr>
-
-<td>4/27 16:40</td>
-
-<td>田中産業</td>
-
-<td>佐藤</td>
-
-<td>修理依頼（写真別管理）</td>
-
-<td></td>
-
-<td>確認中</td>
-
-</tr>
-
-</table>
-
-</div>
-
-<div class="card">
-
-<h2>この方式のメリット</h2>
-
-<ul style="padding-left:20px;line-height:2;">
-
-<li>初期費用が安い</li>
-
-<li>導入が早い</li>
-
-<li>一覧・検索・共有しやすい</li>
-
-<li>Excel感覚で使える</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>この方式の弱点</h2>
-
-<ul style="padding-left:20px;line-height:2;">
-
-<li>誰が対応中か分かりづらい</li>
-
-<li>取引先側に受付状況を見せられない</li>
-
-<li>履歴ページ・再注文機能なし</li>
-
-<li>写真管理が煩雑になりやすい</li>
-
-<li>件数増加で見づらくなりやすい</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>今回ご提案システムとの違い</h2>
-
-<table class="table">
-
-<tr>
-
-<th>項目</th>
-
-<th>表計算案</th>
-
-<th>専用システム案</th>
-
-</tr>
-
-<tr>
-
-<td>受付一覧</td>
-
-<td>○</td>
-
-<td>◎</td>
-
-</tr>
-
-<tr>
-
-<td>対応中表示</td>
-
-<td>△ 手入力</td>
-
-<td>◎ 自動管理</td>
-
-</tr>
-
-<tr>
-
-<td>取引先ログイン</td>
-
-<td>×</td>
-
-<td>◎</td>
-
-</tr>
-
-<tr>
-
-<td>履歴確認</td>
-
-<td>△ 管理側のみ</td>
-
-<td>◎ 双方確認可</td>
-
-</tr>
-
-<tr>
-
-<td>写真添付管理</td>
-
-<td>△ 別管理になりやすい</td>
-
-<td>◎ 一元管理</td>
-
-</tr>
-
-</table>
-
-</div>
-
-</div>
 .card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);margin-bottom:18px}
 h2{font-size:20px;margin-bottom:16px;color:#0d47a1}
 label{display:block;font-size:14px;font-weight:700;margin-bottom:6px;margin-top:14px}
-input,select,textarea{
-width:100%;padding:11px;border:1px solid #cfd8dc;border-radius:8px;font-size:15px
-}
+input,select,textarea{width:100%;padding:11px;border:1px solid #cfd8dc;border-radius:8px;font-size:15px}
 textarea{min-height:110px;resize:vertical}
 .row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:10px}
 .btn{background:#0d47a1;color:#fff;border:none;padding:12px 18px;border-radius:8px;cursor:pointer;font-weight:700;margin-top:16px}
@@ -229,6 +36,7 @@ textarea{min-height:110px;resize:vertical}
 .statusitem{padding:12px;border-bottom:1px solid #e5eaf0}
 .statusitem:last-child{border-bottom:none}
 .small{font-size:13px;color:#555;margin-top:4px}
+ul{padding-left:22px;line-height:2}
 @media(max-width:900px){
 .grid2{grid-template-columns:1fr}
 .row{grid-template-columns:1fr}
@@ -245,7 +53,7 @@ header{font-size:18px}
 <div class="tabs">
 <div class="tab active" onclick="showTab('client',this)">取引先ページ</div>
 <div class="tab" onclick="showTab('admin',this)">管理画面</div>
-<div class="tab" onclick="showTab('sheet',this)">簡易管理（表計算案）</div>
+<div class="tab" onclick="showTab('sheet',this)">簡易管理案</div>
 </div>
 
 <!-- 取引先 -->
@@ -303,38 +111,14 @@ header{font-size:18px}
 
 <div class="grid2">
 
-<!-- 左 -->
 <div>
 <div class="card">
 <h2>問い合わせ一覧</h2>
 <table class="table">
-<tr>
-<th>日時</th>
-<th>会社名</th>
-<th>内容</th>
-<th>状態</th>
-</tr>
-
-<tr>
-<td>4/28 10:20</td>
-<td>株式会社ABC</td>
-<td>商品A 20個</td>
-<td><span class="badge new">未読</span></td>
-</tr>
-
-<tr>
-<td>4/28 09:55</td>
-<td>山田商事</td>
-<td>納期確認</td>
-<td><span class="badge progress">対応中</span></td>
-</tr>
-
-<tr>
-<td>4/27 16:40</td>
-<td>田中産業</td>
-<td>修理依頼</td>
-<td><span class="badge done">完了</span></td>
-</tr>
+<tr><th>日時</th><th>会社名</th><th>内容</th><th>状態</th></tr>
+<tr><td>4/28 10:20</td><td>株式会社ABC</td><td>商品A 20個</td><td><span class="badge new">未読</span></td></tr>
+<tr><td>4/28 09:55</td><td>山田商事</td><td>納期確認</td><td><span class="badge progress">対応中</span></td></tr>
+<tr><td>4/27 16:40</td><td>田中産業</td><td>修理依頼</td><td><span class="badge done">完了</span></td></tr>
 </table>
 </div>
 
@@ -360,33 +144,15 @@ header{font-size:18px}
 </div>
 </div>
 
-<!-- 右 -->
 <div>
 <div class="card">
 <h2>取引先マイページ表示イメージ</h2>
 
 <div class="statusbox">
-
-<div class="statusitem">
-<span class="badge new">未読</span>
-<div class="small">4/28 商品A 20個 発注依頼</div>
-</div>
-
-<div class="statusitem">
-<span class="badge wait">確認中</span>
-<div class="small">4/28 納期確認のお問い合わせ</div>
-</div>
-
-<div class="statusitem">
-<span class="badge progress">対応中</span>
-<div class="small">4/27 修理依頼（写真添付あり）</div>
-</div>
-
-<div class="statusitem">
-<span class="badge done">完了</span>
-<div class="small">4/25 商品B 発注受付済み</div>
-</div>
-
+<div class="statusitem"><span class="badge new">未読</span><div class="small">4/28 商品A 20個 発注依頼</div></div>
+<div class="statusitem"><span class="badge wait">確認中</span><div class="small">4/28 納期確認のお問い合わせ</div></div>
+<div class="statusitem"><span class="badge progress">対応中</span><div class="small">4/27 修理依頼（写真添付あり）</div></div>
+<div class="statusitem"><span class="badge done">完了</span><div class="small">4/25 商品B 発注受付済み</div></div>
 </div>
 
 <div class="notice" style="margin-top:14px">
@@ -397,8 +163,91 @@ header{font-size:18px}
 </div>
 
 </div>
+</div>
+
+<!-- 簡易管理案 -->
+<div id="sheet" class="panel">
+
+<div class="card">
+<h2>簡易管理案（フォーム → スプレッドシート自動蓄積）</h2>
+<div class="notice">
+低コスト・短納期で導入しやすい反面、対応状況管理や取引先向け表示は限定的です。
+</div>
+
+<table class="table" style="margin-top:16px">
+<tr>
+<th>受付日時</th>
+<th>会社名</th>
+<th>担当者</th>
+<th>内容</th>
+<th>対応者</th>
+<th>状況</th>
+</tr>
+
+<tr>
+<td>4/28 10:20</td>
+<td>株式会社ABC</td>
+<td>山田</td>
+<td>商品A 20個</td>
+<td></td>
+<td>未対応</td>
+</tr>
+
+<tr>
+<td>4/28 09:55</td>
+<td>山田商事</td>
+<td>田中</td>
+<td>納期確認</td>
+<td>事務</td>
+<td>電話済</td>
+</tr>
+
+<tr>
+<td>4/27 16:40</td>
+<td>田中産業</td>
+<td>佐藤</td>
+<td>修理依頼（写真別管理）</td>
+<td></td>
+<td>確認中</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<h2>この方式のメリット</h2>
+<ul>
+<li>初期費用が安い</li>
+<li>短期間で導入可能</li>
+<li>一覧・検索・共有しやすい</li>
+<li>Excel感覚で使いやすい</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>この方式の弱点</h2>
+<ul>
+<li>誰が対応中か分かりづらい</li>
+<li>取引先側に進捗表示できない</li>
+<li>履歴ページなし</li>
+<li>写真管理が煩雑になりやすい</li>
+<li>件数増加で見づらくなる</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>比較表</h2>
+<table class="table">
+<tr><th>項目</th><th>簡易管理案</th><th>専用システム案</th></tr>
+<tr><td>受付一覧</td><td>○</td><td>◎</td></tr>
+<tr><td>対応中表示</td><td>△ 手入力</td><td>◎</td></tr>
+<tr><td>取引先ログイン</td><td>×</td><td>◎</td></tr>
+<tr><td>履歴確認</td><td>△</td><td>◎</td></tr>
+<tr><td>写真管理</td><td>△</td><td>◎</td></tr>
+</table>
+</div>
 
 </div>
+
 </div>
 
 <script>
